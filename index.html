@@ -32,10 +32,21 @@
     .nav-links a:hover { color: var(--text); text-decoration: none; }
 
     .hero { padding: 80px 0 64px; }
+    .hero-inner {
+      display: flex; flex-direction: row; align-items: center;
+      gap: 36px;
+    }
+    .hero-photo {
+      width: 140px; flex-shrink: 0;
+      border-radius: 10px; border: 1px solid var(--border);
+      object-fit: cover; aspect-ratio: 4 / 5;
+      background: var(--surface);
+    }
+    .hero-content { flex: 1; min-width: 0; }
     .hero-eyebrow { font-family: var(--mono); font-size: 12px; color: var(--accent); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 20px; }
     .hero h1 { font-size: clamp(28px, 5vw, 40px); font-weight: 300; letter-spacing: -0.03em; line-height: 1.2; margin-bottom: 20px; }
     .hero h1 strong { font-weight: 500; }
-    .hero-bio { font-size: 16px; color: var(--muted); max-width: 560px; line-height: 1.8; margin-bottom: 32px; }
+    .hero-bio { font-size: 16px; color: var(--muted); max-width: 480px; line-height: 1.8; margin-bottom: 32px; }
     .hero-links { display: flex; gap: 12px; flex-wrap: wrap; }
     .btn { display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; border-radius: 6px; font-size: 13px; font-weight: 500; transition: all 0.15s; border: 1px solid transparent; }
     .btn-primary { background: var(--accent); color: #fff; }
@@ -77,6 +88,8 @@
 
     @media (max-width: 600px) {
       .hero { padding: 56px 0 48px; }
+      .hero-inner { gap: 20px; }
+      .hero-photo { width: 96px; }
       .project-header { flex-direction: column; gap: 10px; }
       .project-card { padding: 20px; }
     }
@@ -101,13 +114,18 @@
   <div class="container">
 
     <div class="hero reveal">
-      <p class="hero-eyebrow">Data Scientist</p>
-      <h1>Hi, I'm <strong>Kevin Lu</strong>.</h1>
-      <p class="hero-bio">CS &amp; Neuro @ JHU</p>
-      <div class="hero-links">
-        <a href="mailto:klu19@jhu.edu" class="btn btn-primary">Get in touch</a>
-        <a href="cv.pdf" class="btn btn-ghost">CV ↓</a>
-        <a href="https://github.com/klu19" class="btn btn-ghost">GitHub</a>
+      <div class="hero-inner">
+        <img src="Kev.jpg" alt="Kevin Lu" class="hero-photo" width="140" height="175" />
+        <div class="hero-content">
+          <p class="hero-eyebrow">Data Scientist</p>
+          <h1>Hi, I'm <strong>Kevin</strong>.</h1>
+          <p class="hero-bio">CS &amp; Neuro @ JHU</p>
+          <div class="hero-links">
+            <a href="mailto:klu19@jhu.edu" class="btn btn-primary">Get in touch</a>
+            <a href="cv.pdf" class="btn btn-ghost">CV ↓</a>
+            <a href="https://github.com/klu19" class="btn btn-ghost">GitHub</a>
+          </div>
+        </div>
       </div>
     </div>
 
