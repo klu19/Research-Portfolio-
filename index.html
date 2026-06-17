@@ -3,162 +3,83 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Research Portfolio</title>
+  <title>Kevin Lu — Research Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
-      --bg: #fafaf9;
-      --surface: #ffffff;
-      --border: #e8e6e1;
-      --text: #1a1917;
-      --muted: #6b6762;
-      --accent: #2563eb;
-      --accent-light: #eff4ff;
-      --tag-bg: #f1f0ec;
-      --tag-text: #4a4845;
-      --mono: 'JetBrains Mono', monospace;
-      --sans: 'Inter', system-ui, sans-serif;
+      --bg: #fafaf9; --surface: #ffffff; --border: #e8e6e1;
+      --text: #1a1917; --muted: #6b6762; --accent: #2563eb;
+      --tag-bg: #f1f0ec; --tag-text: #4a4845;
+      --mono: 'JetBrains Mono', monospace; --sans: 'Inter', system-ui, sans-serif;
     }
-
-    body {
-      font-family: var(--sans);
-      background: var(--bg);
-      color: var(--text);
-      font-size: 15px;
-      line-height: 1.7;
-      -webkit-font-smoothing: antialiased;
-    }
-
+    body { font-family: var(--sans); background: var(--bg); color: var(--text); font-size: 15px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
     a { color: var(--accent); text-decoration: none; }
     a:hover { text-decoration: underline; }
-
-    /* ── Layout ── */
     .container { max-width: 720px; margin: 0 auto; padding: 0 24px; }
 
-    /* ── Nav ── */
     nav {
       position: sticky; top: 0; z-index: 10;
-      background: rgba(250,250,249,0.88);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--border);
-      padding: 14px 0;
+      background: rgba(250,250,249,0.88); backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border); padding: 14px 0;
     }
-    nav .inner {
-      max-width: 720px; margin: 0 auto; padding: 0 24px;
-      display: flex; justify-content: space-between; align-items: center;
-    }
-    .nav-name {
-      font-family: var(--mono); font-size: 13px; font-weight: 500;
-      color: var(--text); letter-spacing: -0.01em;
-    }
+    nav .inner { max-width: 720px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; }
+    .nav-name { font-family: var(--mono); font-size: 13px; font-weight: 500; color: var(--text); }
     .nav-links { display: flex; gap: 24px; }
-    .nav-links a {
-      font-size: 13px; color: var(--muted); transition: color 0.15s;
-    }
+    .nav-links a { font-size: 13px; color: var(--muted); transition: color 0.15s; }
     .nav-links a:hover { color: var(--text); text-decoration: none; }
 
-    /* ── Hero ── */
     .hero { padding: 80px 0 64px; }
-    .hero-eyebrow {
-      font-family: var(--mono); font-size: 12px; color: var(--accent);
-      letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 20px;
-    }
-    .hero h1 {
-      font-size: clamp(28px, 5vw, 40px); font-weight: 300;
-      letter-spacing: -0.03em; line-height: 1.2; margin-bottom: 20px;
-      color: var(--text);
-    }
+    .hero-eyebrow { font-family: var(--mono); font-size: 12px; color: var(--accent); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 20px; }
+    .hero h1 { font-size: clamp(28px, 5vw, 40px); font-weight: 300; letter-spacing: -0.03em; line-height: 1.2; margin-bottom: 20px; }
     .hero h1 strong { font-weight: 500; }
-    .hero-bio {
-      font-size: 16px; color: var(--muted); max-width: 560px;
-      line-height: 1.8; margin-bottom: 32px;
-    }
+    .hero-bio { font-size: 16px; color: var(--muted); max-width: 560px; line-height: 1.8; margin-bottom: 32px; }
     .hero-links { display: flex; gap: 12px; flex-wrap: wrap; }
-    .btn {
-      display: inline-flex; align-items: center; gap: 6px;
-      padding: 8px 16px; border-radius: 6px; font-size: 13px; font-weight: 500;
-      transition: all 0.15s; cursor: pointer; border: 1px solid transparent;
-    }
-    .btn-primary {
-      background: var(--accent); color: #fff;
-    }
+    .btn { display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; border-radius: 6px; font-size: 13px; font-weight: 500; transition: all 0.15s; border: 1px solid transparent; }
+    .btn-primary { background: var(--accent); color: #fff; }
     .btn-primary:hover { background: #1d4ed8; text-decoration: none; }
-    .btn-ghost {
-      background: transparent; color: var(--text);
-      border-color: var(--border);
-    }
+    .btn-ghost { background: transparent; color: var(--text); border-color: var(--border); }
     .btn-ghost:hover { background: var(--surface); text-decoration: none; }
 
-    /* ── Section ── */
     section { padding: 64px 0; border-top: 1px solid var(--border); }
-    .section-label {
-      font-family: var(--mono); font-size: 11px; color: var(--muted);
-      letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 40px;
-    }
+    .section-label { font-family: var(--mono); font-size: 11px; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 40px; }
 
-    /* ── Project cards ── */
     .projects-grid { display: flex; flex-direction: column; gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
-    .project-card {
-      background: var(--surface); padding: 28px 32px;
-      transition: background 0.15s;
-    }
+    .project-card { background: var(--surface); padding: 28px 32px; transition: background 0.15s; }
     .project-card:hover { background: #fdfcfb; }
     .project-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; margin-bottom: 10px; }
     .project-title { font-size: 15px; font-weight: 500; color: var(--text); }
-    .project-links { display: flex; gap: 10px; flex-shrink: 0; }
-    .project-link {
-      font-family: var(--mono); font-size: 11px; color: var(--muted);
-      border: 1px solid var(--border); padding: 3px 10px; border-radius: 4px;
-      transition: all 0.15s;
-    }
+    .project-links { display: flex; gap: 10px; flex-shrink: 0; flex-wrap: wrap; }
+    .project-link { font-family: var(--mono); font-size: 11px; color: var(--muted); border: 1px solid var(--border); padding: 3px 10px; border-radius: 4px; transition: all 0.15s; }
     .project-link:hover { color: var(--accent); border-color: var(--accent); text-decoration: none; }
     .project-desc { font-size: 14px; color: var(--muted); margin-bottom: 16px; line-height: 1.65; }
     .tags { display: flex; flex-wrap: wrap; gap: 6px; }
-    .tag {
-      font-family: var(--mono); font-size: 11px;
-      background: var(--tag-bg); color: var(--tag-text);
-      padding: 3px 9px; border-radius: 4px;
-    }
+    .tag { font-family: var(--mono); font-size: 11px; background: var(--tag-bg); color: var(--tag-text); padding: 3px 9px; border-radius: 4px; }
 
-    /* ── Publications ── */
     .pub-list { display: flex; flex-direction: column; gap: 32px; }
     .pub-item { padding-bottom: 32px; border-bottom: 1px solid var(--border); }
     .pub-item:last-child { border-bottom: none; padding-bottom: 0; }
-    .pub-venue {
-      font-family: var(--mono); font-size: 11px; color: var(--accent);
-      letter-spacing: 0.05em; margin-bottom: 6px;
-    }
+    .pub-venue { font-family: var(--mono); font-size: 11px; color: var(--accent); letter-spacing: 0.05em; margin-bottom: 6px; }
     .pub-title { font-size: 15px; font-weight: 500; margin-bottom: 6px; line-height: 1.4; }
     .pub-authors { font-size: 13px; color: var(--muted); margin-bottom: 12px; }
     .pub-authors em { color: var(--text); font-style: normal; font-weight: 500; }
-    .pub-actions { display: flex; gap: 10px; }
-    .pub-link {
-      font-size: 12px; font-family: var(--mono); color: var(--muted);
-      border: 1px solid var(--border); padding: 3px 10px; border-radius: 4px;
-      transition: all 0.15s;
-    }
+    .pub-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+    .pub-link { font-size: 12px; font-family: var(--mono); color: var(--muted); border: 1px solid var(--border); padding: 3px 10px; border-radius: 4px; transition: all 0.15s; }
     .pub-link:hover { color: var(--accent); border-color: var(--accent); text-decoration: none; }
 
-    /* ── Footer ── */
-    footer {
-      border-top: 1px solid var(--border); padding: 40px 0;
-      text-align: center; color: var(--muted); font-size: 13px;
-    }
+    footer { border-top: 1px solid var(--border); padding: 40px 0; text-align: center; color: var(--muted); font-size: 13px; }
 
-    /* ── Scroll reveal ── */
     .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.5s ease, transform 0.5s ease; }
     .reveal.visible { opacity: 1; transform: none; }
+    .projects-loading { color: var(--muted); font-family: var(--mono); font-size: 13px; padding: 24px 0; }
 
     @media (max-width: 600px) {
       .hero { padding: 56px 0 48px; }
       .project-header { flex-direction: column; gap: 10px; }
       .project-card { padding: 20px; }
     }
-
     @media (prefers-reduced-motion: reduce) {
       .reveal { opacity: 1; transform: none; transition: none; }
     }
@@ -172,127 +93,43 @@
       <div class="nav-links">
         <a href="#projects">Projects</a>
         <a href="#publications">Publications</a>
-        <a href="mailto:you@university.edu">Contact</a>
+        <a href="mailto:klu19@jhu.edu">Contact</a>
       </div>
     </div>
   </nav>
 
   <div class="container">
 
-    <!-- Hero -->
     <div class="hero reveal">
       <p class="hero-eyebrow">Data Scientist</p>
-      <h1>Hi, I'm <strong>Kevin</strong>.<br></h1>
-      <p class="hero-bio">
-        CS & Neuro @ JHU
-      </p>
+      <h1>Hi, I'm <strong>Kevin Lu</strong>.</h1>
+      <p class="hero-bio">CS &amp; Neuro @ JHU</p>
       <div class="hero-links">
-        <a href="klu19@jhu.edu" class="btn btn-primary">Get in touch</a>
+        <a href="mailto:klu19@jhu.edu" class="btn btn-primary">Get in touch</a>
         <a href="cv.pdf" class="btn btn-ghost">CV ↓</a>
         <a href="https://github.com/klu19" class="btn btn-ghost">GitHub</a>
       </div>
     </div>
 
-    <!-- Projects -->
     <section id="projects">
       <p class="section-label">Selected projects</p>
-      <div class="projects-grid">
-
-        <div class="project-card reveal">
-          <div class="project-header">
-            <span class="project-title">Project Title One</span>
-            <div class="project-links">
-              <a href="#" class="project-link">paper</a>
-              <a href="#" class="project-link">code</a>
-            </div>
-          </div>
-          <p class="project-desc">
-            A short description of what this project does, the problem it solves,
-            and what makes it interesting. Keep it to two or three sentences max.
-          </p>
-          <div class="tags">
-            <span class="tag">pytorch</span>
-            <span class="tag">transformers</span>
-            <span class="tag">NLP</span>
-          </div>
-        </div>
-
-        <div class="project-card reveal">
-          <div class="project-header">
-            <span class="project-title">Project Title Two</span>
-            <div class="project-links">
-              <a href="#" class="project-link">paper</a>
-              <a href="#" class="project-link">demo</a>
-            </div>
-          </div>
-          <p class="project-desc">
-            Description of your second project. What dataset did you use, what method
-            did you propose, and what was the main result or finding?
-          </p>
-          <div class="tags">
-            <span class="tag">reinforcement learning</span>
-            <span class="tag">robotics</span>
-          </div>
-        </div>
-
-        <div class="project-card reveal">
-          <div class="project-header">
-            <span class="project-title">Project Title Three</span>
-            <div class="project-links">
-              <a href="#" class="project-link">code</a>
-            </div>
-          </div>
-          <p class="project-desc">
-            Description of your third project. What was the core contribution?
-            What makes this work different from prior approaches?
-          </p>
-          <div class="tags">
-            <span class="tag">computer vision</span>
-            <span class="tag">diffusion models</span>
-          </div>
-        </div>
-
+      <div class="projects-grid" id="projects-grid">
+        <div class="projects-loading">Loading projects...</div>
       </div>
     </section>
 
-    <!-- Publications -->
     <section id="publications">
       <p class="section-label">Publications</p>
       <div class="pub-list">
-
         <div class="pub-item reveal">
-          <p class="pub-venue">NeurIPS 2024</p>
-          <p class="pub-title">Your Paper Title Goes Here: A Study of Something Interesting</p>
-          <p class="pub-authors"><em>Your Name</em>, Co-author One, Co-author Two, Senior Author</p>
-          <div class="pub-actions">
-            <a href="#" class="pub-link">arxiv</a>
-            <a href="#" class="pub-link">pdf</a>
-            <a href="#" class="pub-link">code</a>
-            <a href="#" class="pub-link">poster</a>
-          </div>
-        </div>
-
-        <div class="pub-item reveal">
-          <p class="pub-venue">ICML 2024</p>
-          <p class="pub-title">Another Great Paper Title: Subtitle That Explains the Method</p>
-          <p class="pub-authors">Co-author One, <em>Your Name</em>, Senior Author</p>
+          <p class="pub-venue">Venue · Year</p>
+          <p class="pub-title">Your Paper Title Goes Here</p>
+          <p class="pub-authors"><em>Kevin Lu</em>, Co-author One, Senior Author</p>
           <div class="pub-actions">
             <a href="#" class="pub-link">arxiv</a>
             <a href="#" class="pub-link">pdf</a>
           </div>
         </div>
-
-        <div class="pub-item reveal">
-          <p class="pub-venue">ICLR 2023</p>
-          <p class="pub-title">Earlier Work Title: What You Found and Why It Matters</p>
-          <p class="pub-authors"><em>Your Name</em>, Co-author One</p>
-          <div class="pub-actions">
-            <a href="#" class="pub-link">arxiv</a>
-            <a href="#" class="pub-link">pdf</a>
-            <a href="#" class="pub-link">slides</a>
-          </div>
-        </div>
-
       </div>
     </section>
 
@@ -300,16 +137,51 @@
 
   <footer>
     <div class="container">
-      <p>Built with plain HTML · <a href="https://github.com/klu19">GitHub</a></p>
+      <p>Kevin Lu · <a href="https://github.com/klu19">GitHub</a></p>
     </div>
   </footer>
 
   <script>
+    // ── Render projects from projects.json ──
+    async function loadProjects() {
+      const grid = document.getElementById('projects-grid');
+      try {
+        const res = await fetch('projects.json?cb=' + Date.now());
+        if (!res.ok) throw new Error('Failed to load');
+        const projects = await res.json();
+        if (!projects.length) {
+          grid.innerHTML = '<div class="projects-loading">No projects yet.</div>';
+          return;
+        }
+        grid.innerHTML = projects.map(p => `
+          <div class="project-card reveal">
+            <div class="project-header">
+              <span class="project-title">${esc(p.title)}</span>
+              <div class="project-links">
+                ${(p.links || []).map(l => `<a href="${esc(l.url)}" class="project-link" target="_blank" rel="noopener">${esc(l.label)}</a>`).join('')}
+              </div>
+            </div>
+            <p class="project-desc">${esc(p.description)}</p>
+            <div class="tags">${(p.tags || []).map(t => `<span class="tag">${esc(t)}</span>`).join('')}</div>
+          </div>
+        `).join('');
+        // re-observe new cards
+        grid.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+      } catch (e) {
+        grid.innerHTML = '<div class="projects-loading">Could not load projects.</div>';
+      }
+    }
+
+    function esc(str) {
+      return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+    }
+
     const observer = new IntersectionObserver(
       entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } }),
       { threshold: 0.08 }
     );
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    loadProjects();
   </script>
 
 </body>

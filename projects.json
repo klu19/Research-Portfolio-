@@ -1,0 +1,22 @@
+[
+  {
+    "id": "1",
+    "title": "Project Title One",
+    "description": "A short description of what this project does, the problem it solves, and what makes it interesting.",
+    "tags": ["pytorch", "transformers", "NLP"],
+    "links": [
+      { "label": "paper", "url": "#" },
+      { "label": "code", "url": "#" }
+    ]
+  },
+  {
+    "id": "2",
+    "title": "Project Title Two",
+    "description": "Description of your second project. What dataset did you use, what method did you propose, and what was the main result?",
+    "tags": ["reinforcement learning", "robotics"],
+    "links": [
+      { "label": "paper", "url": "#" },
+      { "label": "demo", "url": "#" }
+    ]
+  }
+]
